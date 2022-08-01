@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import {
+  BrowserRouter as Router,
+  useRoutes,
+} from "react-router-dom";
+import { isLogin } from "./providers/AuthService";
+import Login from "./screens/Login";
+import Signup from "./screens/Signup";
+import Todo from "./screens/Todo";
+const App = () => {
+  const routes = useRoutes([
+    { path: "/", element: <Login /> },
+    { path: "/signup", element: <Signup /> },
+    { path: "/login", element: <Login /> },
+    { path: "/todo", element:isLogin()? <Todo />: <Login />},
+  ]);
+  return routes;
+};
+const AppWrapper = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Router>
+        <App />
+      </Router>
   );
-}
-
-export default App;
+};
+export default AppWrapper;
