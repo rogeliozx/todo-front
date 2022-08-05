@@ -3,7 +3,7 @@ import axios from "axios";
 const getTodo = async () => {
   try {
     const { data } = await axios.get(
-      `http://localhost:5000/todo-app/todo-items?userID=${localStorage.getItem(
+      `https://test-hermosillo.herokuapp.com/todo-app/todo-items?userID=${localStorage.getItem(
         "token"
       )}`
     );
@@ -19,7 +19,7 @@ const editTodo = async (
 ) => {
   try {
     const { data } = await axios.put(
-      `http://localhost:5000/todo-app/update?todoID=${TodoID}`,
+      `https://test-hermosillo.herokuapp.com/todo-app/update?todoID=${TodoID}`,
       { ...body }
     );
     return data;
@@ -31,7 +31,7 @@ const editTodo = async (
 const deleteTodo = async (TodoID: string) => {
   try {
     const { data } = await axios.delete(
-      `http://localhost:5000/todo-app/delete?todoID=${TodoID}`
+      `https://test-hermosillo.herokuapp.com/todo-app/delete?todoID=${TodoID}`
     );
     return data;
   } catch (error: any) {

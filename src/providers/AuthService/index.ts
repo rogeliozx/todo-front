@@ -1,7 +1,7 @@
 import axios from "axios";
 const login = async (formData: FormData) => {
   try {
-    const { data } = await axios.post("http://localhost:5000/users/login", {
+    const { data } = await axios.post("https://test-hermosillo.herokuapp.com/users/login", {
       email: formData.get("email") || "",
       password: formData.get("password") || "",
     });
@@ -13,7 +13,7 @@ const login = async (formData: FormData) => {
 
 const signUp = async (formData: FormData) => {
   try {
-    const { data } = await axios.post("http://localhost:5000/users/sigin", {
+    const { data } = await axios.post("https://test-hermosillo.herokuapp.com/users/sigin", {
       email: formData.get("email") || "",
       password: formData.get("password") || "",
     });
