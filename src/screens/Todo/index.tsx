@@ -5,7 +5,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import TodoList from "../../components/TodoList";
 import { getTodo } from "../../providers/TodoService";
 import { TodoData } from "../../types";
-import ModalInput from "../../components/Modal";
 import ModalAdd from "../../components/ModalAdd";
 
 const useStyles = makeStyles({
